@@ -1,0 +1,39 @@
+{
+  "name": "audiens/adobe-client",
+  "license": "MIT",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Audiens\\AdobeClient\\": "src",
+      "Test\\": "tests"
+    }
+  },
+  "require": {
+    "php": ">=5.6",
+    "guzzlehttp/guzzle": "^6.2.0",
+    "doctrine/cache": "^1.6.0",
+    "vlucas/phpdotenv": "^2.2.0",
+    "zendframework/zend-hydrator": "^2.2.1"
+  },
+  "require-dev": {
+    "satooshi/php-coveralls": "^1",
+    "phpunit/phpunit": "^5.3",
+    "squizlabs/php_codesniffer": "^2",
+    "phing/phing": "^2",
+    "facile-it/paraunit": "dev-master",
+    "symfony/var-dumper": "^3.1.6"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "bash contrib/setup.sh"
+    ],
+    "post-update-cmd": [
+      "bash contrib/setup.sh"
+    ]
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "extra": {},
+  "prefer-stable": true
+}
