@@ -7,9 +7,9 @@ use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\ClientInterface;
 
 /**
- * Class AdnxStrategy
+ * Class SandboxStrategy
  */
-class AdnxStrategy implements AuthStrategyInterface
+class SandboxStrategy implements AuthStrategyInterface
 {
 
     const NAME = 'adnx_auth_strategy';
