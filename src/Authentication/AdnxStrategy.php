@@ -61,20 +61,20 @@ class AdnxStrategy implements AuthStrategyInterface
             )
         );
 
-        $payload = [
-            'auth' => [
-                'grant_type' => $refresh ? 'refresh_token' : 'password',
-                'username' => $username,
-                'password' => $password,
-            ]
-        ];
-
         $response = $this->client->request(
             'POST',
             self::BASE_URL,
             [
-                'Authorization' => ['Basic '.$headerAuth],
-                'body' => json_encode($payload)
+                'headers' =>
+                    [
+                        'Authorization' => 'Basic ' . $headerAuth
+                    ],
+                'form_params' =>
+                    [
+                        'grant_type' => $refresh ? 'refresh_token' : 'password',
+                        'username' => $username,
+                        'password' => $password,
+                    ]
             ]
         );
 

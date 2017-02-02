@@ -2,23 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a41e06f-92b3-4fef-a8b4-9d91bd98a409" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.env" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test/Functional/Repository/TraitRepositoryTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test/FunctionalTestCase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test/TestCase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test/Unit/AdnxStrategyTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CachableTrait.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CacheableInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entity/Error.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entity/HydratableTrait.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entity/Traits.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exception/RepositoryException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Repository/RepositoryResponse.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Repository/TraitRepository.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.composer-update.sh.swp" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/php5-testingConfig.ini" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/php7-testingConfig.ini" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/phpunit.xml.dist" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Test/Functional/Repository/TraitRepositoryTest.php" afterPath="$PROJECT_DIR$/Test/Functional/TraitRepositoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/adobe-client.iml" afterPath="$PROJECT_DIR$/.idea/adobe-client.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/FunctionalTestCase.php" afterPath="$PROJECT_DIR$/Test/FunctionalTestCase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Auth.php" afterPath="$PROJECT_DIR$/src/Auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Authentication/AdnxStrategy.php" afterPath="$PROJECT_DIR$/src/Authentication/AdnxStrategy.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Authentication/SandboxStrategy.php" afterPath="$PROJECT_DIR$/src/Authentication/SandboxStrategy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/HydratableTrait.php" afterPath="$PROJECT_DIR$/src/Entity/HydratableTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Traits.php" afterPath="$PROJECT_DIR$/src/Entity/Traits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Exception/RepositoryException.php" afterPath="$PROJECT_DIR$/src/Exception/RepositoryException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/RepositoryResponse.php" afterPath="$PROJECT_DIR$/src/Repository/RepositoryResponse.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TraitRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TraitRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/.gitattributes" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/.gitattributes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/File.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Fixer.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Fixer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports/Gitblame.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports/Gitblame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports/Hgblame.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports/Hgblame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports/Svnblame.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports/Svnblame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/AbstractScopeSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/AbstractScopeSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/AbstractVariableSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/AbstractVariableSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Classes/DuplicateClassNameSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Classes/DuplicateClassNameSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/UnusedFunctionParameterSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/CodeAnalysis/UnusedFunctionParameterSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/ControlStructures/InlineControlStructureSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/ControlStructures/InlineControlStructureSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Files/ByteOrderMarkSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Files/ByteOrderMarkSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Functions/FunctionCallArgumentSpacingSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Functions/FunctionCallArgumentSpacingSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Metrics/CyclomaticComplexitySniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Metrics/CyclomaticComplexitySniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Metrics/NestingLevelSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Metrics/NestingLevelSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions/CamelCapsFunctionNameSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions/CamelCapsFunctionNameSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions/ConstructorNameSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions/ConstructorNameSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/PHP/SyntaxSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/PHP/SyntaxSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/WhiteSpace/ScopeIndentSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/WhiteSpace/ScopeIndentSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Commenting/FileCommentSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Commenting/FileCommentSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Commenting/FunctionCommentSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Commenting/FunctionCommentSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Functions/ValidDefaultValueSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Functions/ValidDefaultValueSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/NamingConventions/ValidClassNameSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/NamingConventions/ValidClassNameSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/NamingConventions/ValidFunctionNameSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/NamingConventions/ValidFunctionNameSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/WhiteSpace/ScopeClosingBraceSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/WhiteSpace/ScopeClosingBraceSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR1/Sniffs/Methods/CamelCapsMethodNameSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR1/Sniffs/Methods/CamelCapsMethodNameSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/CSS/NamedColoursSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/CSS/NamedColoursSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/CSS/ShorthandSizeSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/CSS/ShorthandSizeSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Classes/ValidClassNameSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Classes/ValidClassNameSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Commenting/DocCommentAlignmentSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Commenting/DocCommentAlignmentSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Commenting/FunctionCommentSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Commenting/FunctionCommentSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Formatting/OperatorBracketSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Formatting/OperatorBracketSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Functions/LowercaseFunctionKeywordsSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Functions/LowercaseFunctionKeywordsSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/NamingConventions/ValidFunctionNameSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/NamingConventions/ValidFunctionNameSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/DisallowMultipleAssignmentsSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/DisallowMultipleAssignmentsSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Strings/ConcatenationSpacingSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Strings/ConcatenationSpacingSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/SemicolonSpacingSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/SemicolonSpacingSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/SuperfluousWhitespaceSniff.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/SuperfluousWhitespaceSniff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/CSS.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/CSS.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/JS.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/JS.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/PHP.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/PHP.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokens.php" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokens.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/README.md" afterPath="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer/README.md" />
     </list>
     <ignored path="adobe-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,10 +99,10 @@
       <file leaf-file-name="TraitRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Repository/TraitRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="73" column="15" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
+            <state relative-caret-position="335">
+              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
-                <element signature="e#50#88#0#PHP" expanded="true" />
+                <element signature="e#50#79#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,13 +118,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TraitRepositoryTest.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Test/Functional/Repository/TraitRepositoryTest.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Auth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TraitRepositoryTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/Functional/TraitRepositoryTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <element signature="e#46#68#0#PHP" expanded="true" />
+                <element signature="e#35#73#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +153,8 @@
       <file leaf-file-name="RepositoryException.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exception/RepositoryException.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="468">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -94,53 +163,31 @@
       <file leaf-file-name="RepositoryResponse.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Repository/RepositoryResponse.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="95" column="61" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
+            <state relative-caret-position="255">
+              <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdnxStrategyTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/Unit/AdnxStrategyTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="604">
+              <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SandboxStrategy.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Authentication/SandboxStrategy.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding>
-                <element signature="e#50#87#0#PHP" expanded="true" />
+                <element signature="e#54#103#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Error.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Error.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HydratableTrait.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/HydratableTrait.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-              <folding>
-                <element signature="e#46#79#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CachableTrait.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CachableTrait.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CacheableInterface.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CacheableInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -148,8 +195,8 @@
       <file leaf-file-name="Traits.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Traits.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="527" column="0" selection-start-line="527" selection-start-column="0" selection-end-line="527" selection-end-column="0" />
+            <state relative-caret-position="263">
+              <caret line="140" column="27" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="27" />
               <folding>
                 <element signature="e#46#95#0#PHP" expanded="true" />
               </folding>
@@ -165,31 +212,34 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/contrib/contributing.sh" />
         <option value="$PROJECT_DIR$/src/authentication/AuthStrategyInterface.php" />
         <option value="$PROJECT_DIR$/src/Exception/AuthStrategyInterface.php" />
         <option value="$PROJECT_DIR$/src/Exception/AuthException.php" />
         <option value="$PROJECT_DIR$/src/authentication/AdnxStrategy.php" />
         <option value="$PROJECT_DIR$/src/Authentication/AuthStrategyInterface.php" />
-        <option value="$PROJECT_DIR$/src/Authentication/AdnxStrategy.php" />
-        <option value="$PROJECT_DIR$/src/Auth.php" />
-        <option value="$PROJECT_DIR$/Test/FunctionalTestCase.php" />
-        <option value="$PROJECT_DIR$/src/Authentication/SandboxStrategy.php" />
         <option value="$PROJECT_DIR$/Test/TestCase.php" />
         <option value="$PROJECT_DIR$/Test/Unit/AdnxStrategyTest.php" />
         <option value="$PROJECT_DIR$/src/Repository/ReportRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/Trait.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Traits.php" />
         <option value="$PROJECT_DIR$/src/CachableTrait.php" />
         <option value="$PROJECT_DIR$/src/CacheableInterface.php" />
+        <option value="$PROJECT_DIR$/Test/Functional/FunctionalTestCase.php" />
         <option value="$PROJECT_DIR$/src/Entity/Error.php" />
+        <option value="$PROJECT_DIR$/Test/Functional/Repository/FunctionalTestCase.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Traits.php" />
         <option value="$PROJECT_DIR$/src/Entity/HydratableTrait.php" />
+        <option value="$PROJECT_DIR$/Test/Functional/Repository/TraitRepositoryTest.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/Test/FunctionalTestCase.php" />
+        <option value="$PROJECT_DIR$/src/Authentication/AdnxStrategy.php" />
+        <option value="$PROJECT_DIR$/src/Authentication/SandboxStrategy.php" />
+        <option value="$PROJECT_DIR$/src/Auth.php" />
         <option value="$PROJECT_DIR$/src/Repository/RepositoryResponse.php" />
         <option value="$PROJECT_DIR$/src/Exception/RepositoryException.php" />
+        <option value="$PROJECT_DIR$/Test/Functional/TraitRepositoryTest.php" />
         <option value="$PROJECT_DIR$/src/Repository/TraitRepository.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/Test/Functional/Repository/TraitRepositoryTest.php" />
       </list>
     </option>
   </component>
@@ -230,6 +280,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -297,31 +349,30 @@
               <option name="myItemId" value="Functional" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Repository" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../appnexus-client" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Repository" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/Exception" />
       <recent name="$PROJECT_DIR$/src/Entity" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/Test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Test/Functional" />
+      <recent name="$PROJECT_DIR$/Test" />
+      <recent name="$PROJECT_DIR$/Test/Functional/Repository" />
       <recent name="$PROJECT_DIR$/Test/Unit" />
+      <recent name="$PROJECT_DIR$/src/Repository" />
     </key>
   </component>
   <component name="RunManager">
@@ -394,22 +445,24 @@
       <option name="presentableId" value="Default" />
       <updated>1485873365640</updated>
       <workItem from="1485873367006" duration="5594000" />
-      <workItem from="1485937918586" duration="15991000" />
+      <workItem from="1485937918586" duration="16216000" />
+      <workItem from="1486026382567" duration="12922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21585000" />
+    <option name="totallyTimeSpent" value="34732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="997" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36499467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36926362" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20437567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4134199" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41268075" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -421,7 +474,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -442,6 +494,92 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Repository/TraitRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+          <folding>
+            <element signature="e#50#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/Functional/TraitRepositoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#35#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/RepositoryException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/RepositoryResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/HydratableTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CachableTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CacheableInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Traits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9342">
+          <caret line="521" column="0" selection-start-line="521" selection-start-column="0" selection-end-line="521" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -454,7 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -462,7 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -498,7 +634,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="e#54#103#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -518,19 +656,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contrib/contributing.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -539,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -553,86 +681,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authentication/AuthStrategyInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="92" column="27" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authentication/SandboxStrategy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/FunctionalTestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-          <folding>
-            <element signature="e#24#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/TestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="e#24#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Unit/AdnxStrategyTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ReportRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authentication/AdnxStrategy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="e#54#103#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/AuthException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ReportRepository.php" />
     <entry file="file://$PROJECT_DIR$/src/CachableTrait.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -649,58 +698,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Traits.php">
+    <entry file="file://$PROJECT_DIR$/Test/TestCase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="527" column="0" selection-start-line="527" selection-start-column="0" selection-end-line="527" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/Command.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4317">
+          <caret line="126" column="20" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/phpunit">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="694">
+          <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
           <folding>
-            <element signature="e#46#95#0#PHP" expanded="true" />
+            <element signature="e#25#246#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Error.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="36">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/HydratableTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="486">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authentication/AdnxStrategy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding>
-            <element signature="e#46#79#0#PHP" expanded="true" />
+            <element signature="e#54#103#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/RepositoryException.php">
+    <entry file="file://$PROJECT_DIR$/src/Exception/AuthException.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/FunctionalTestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/Unit/AdnxStrategyTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authentication/AuthStrategyInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/RepositoryResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="95" column="61" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
+        <state relative-caret-position="255">
+          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authentication/SandboxStrategy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
-            <element signature="e#50#87#0#PHP" expanded="true" />
+            <element signature="e#54#103#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/RepositoryException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/Functional/TraitRepositoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#35#73#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/TraitRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="73" column="15" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
+        <state relative-caret-position="335">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding>
-            <element signature="e#50#88#0#PHP" expanded="true" />
+            <element signature="e#50#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Traits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="140" column="27" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="27" />
+          <folding>
+            <element signature="e#46#95#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -713,13 +875,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Functional/Repository/TraitRepositoryTest.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#46#68#0#PHP" expanded="true" />
-          </folding>
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

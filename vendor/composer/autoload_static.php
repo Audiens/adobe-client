@@ -95,7 +95,7 @@ class ComposerStaticInit67d12316165547ca361c56fd552b9fdd
         ),
         'Test\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/tests',
+            0 => __DIR__ . '/../..' . '/Test',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

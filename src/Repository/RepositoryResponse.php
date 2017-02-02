@@ -96,9 +96,8 @@ class RepositoryResponse
         $responseArray = json_decode($responseContent, true);
 
 
-
-        if (isset($responseArray['error'])) {
-            $self->setSuccessful(false);
+        if (!isset($responseArray['error'])) {
+            $self->setSuccessful(true);
         }
 
         if (!$self->isSuccessful()) {

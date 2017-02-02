@@ -10,7 +10,7 @@ return array(
     'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib/src'),
     'Zend\\Hydrator\\' => array($vendorDir . '/zendframework/zend-hydrator/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
-    'Test\\' => array($baseDir . '/tests'),
+    'Test\\' => array($baseDir . '/Test'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),

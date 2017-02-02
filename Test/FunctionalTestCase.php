@@ -3,12 +3,11 @@
 namespace Test;
 
 use Audiens\AdobeClient\Auth;
-use Audiens\AdobeClient\Authentication\AdnxStrategy;
 use Audiens\AdobeClient\Authentication\SandboxStrategy;
+use Audiens\AdobeClient\Repository\TraitRepository;
 use Doctrine\Common\Cache\FilesystemCache;
 use Dotenv\Dotenv;
 use GuzzleHttp\Client;
-use Prophecy\Argument;
 
 /**
  * Class FunctionalTestCase
@@ -76,5 +75,20 @@ class FunctionalTestCase extends \PHPUnit_Framework_TestCase
         return $authClient;
     }
 
+    /**
+     * @param bool|true $cacheToken
+     *
+     * @return TraitRepository
+     */
+    protected function getTraitRepository($cacheToken = true)
+    {
+
+        $authClient = $this->getAuth($cacheToken);
+
+        $traitRepository = new TraitRepository($authClient);
+        $traitRepository->setBaseUrl(TraitRepository::SANDBOX_BASE_URL);
+
+        return $traitRepository;
+    }
 
 }

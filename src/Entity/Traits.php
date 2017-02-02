@@ -12,6 +12,8 @@ use GuzzleHttp\ClientInterface;
 class Traits
 {
 
+    use HydratableTrait;
+
     /** @var  int */
     protected $sid;
 

@@ -16,4 +16,14 @@ class RepositoryException extends \Exception
     {
         return new self($reason);
     }
+
+    /**
+     * @param $responseContent
+     *
+     * @return self
+     */
+    public static function wrongFormat($responseContent)
+    {
+        return new self($responseContent);
+    }
 }

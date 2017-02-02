@@ -2,6 +2,7 @@
 
 namespace Audiens\AdobeClient\Repository;
 
+use Audiens\AdobeClient\Auth;
 use Audiens\AdobeClient\CachableTrait;
 use Audiens\AdobeClient\CacheableInterface;
 use Audiens\AdobeClient\Entity\Traits;
@@ -19,7 +20,7 @@ class TraitRepository implements CacheableInterface
 
     const BASE_URL = 'https://api.demdex.com:443/v1/traits/';
 
-    const SANDBOX_BASE_URL = 'https://api.beta.demdex.com:443/v1/traits/';
+    const SANDBOX_BASE_URL = 'https://api-beta.demdex.com:443/v1/traits/';
 
     /** @var Client */
     protected $client;
@@ -64,6 +65,63 @@ class TraitRepository implements CacheableInterface
         $this->baseUrl = $baseUrl;
     }
 
+    /**
+     * @param Traits $trait
+     *
+     * @return RepositoryResponse
+     * @throws RepositoryException
+     */
+    public function add(Traits $trait)
+    {
+
+        $payload = [
+            $trait->toArray(),
+        ];
+
+
+        $response = $this->client->request('POST', $this->baseUrl, ['body' => json_encode($payload)]);
+
+        $repositoryResponse = RepositoryResponse::fromResponse($response);
+
+        if ($repositoryResponse->isSuccessful()) {
+            $stream = $response->getBody();
+            $responseContent = json_decode($stream->getContents(), true);
+            $stream->rewind();
+
+            if (!(isset($responseContent['sid']))) {
+                throw RepositoryException::wrongFormat(serialize($responseContent));
+            }
+
+            $trait->setSid($responseContent['sid']);
+        }
+        return $repositoryResponse;
+    }
+
+    /**
+     * @param $id
+     *
+     * @return Traits|null
+     */
+    public function findOneById($id)
+    {
+
+        $compiledUrl = $this->baseUrl.$id;
+
+        $response = $this->client->request('GET', $compiledUrl);
+
+        $repositoryResponse = RepositoryResponse::fromResponse($response);
+
+        if (!$repositoryResponse->isSuccessful()) {
+            return null;
+        }
+
+        $stream = $response->getBody();
+        $responseContent = json_decode($stream->getContents(), true);
+        $stream->rewind();
+
+        return Traits::fromArray($responseContent);
+    }
+
     public function findAll()
     {
 //        $cacheKey = self::CACHE_NAMESPACE.sha1($memberId.$start.$maxResults);
@@ -78,7 +136,9 @@ class TraitRepository implements CacheableInterface
 
         $response = $this->client->request('GET', $compiledUrl);
 
+
         $repositoryResponse = RepositoryResponse::fromResponse($response);
+
 
         if (!$repositoryResponse->isSuccessful()) {
             throw RepositoryException::genericFailed($repositoryResponse);
@@ -89,11 +149,7 @@ class TraitRepository implements CacheableInterface
         $stream->rewind();
 
         $result = [];
-//
-//        if (!$responseContent['response']['segments']) {
-//            $responseContent['response']['segments'] = [];
-//        }
-//
+
         foreach ($responseContent as $traitArray) {
             $result[] = Traits::fromArray($traitArray);
         }

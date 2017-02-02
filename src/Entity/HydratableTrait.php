@@ -2,9 +2,7 @@
 
 namespace Audiens\AdobeClient\Entity;
 
-use Zend\Hydrator\ObjectProperty;
 use Zend\Hydrator\Reflection;
-use Zend\Stdlib\Hydrator;
 
 /**
  * Class HydratableTrait
@@ -34,7 +32,7 @@ trait HydratableTrait
     }
 
     /**
-     * @return ObjectProperty
+     * @return Reflection
      */
     private static function getHydrator()
     {

@@ -14,9 +14,9 @@ class SandboxStrategy implements AuthStrategyInterface
 
     const NAME = 'adnx_auth_strategy';
 
-    const BASE_URL = 'https://api-beta.demdex.com//oauth/token';
+    const BASE_URL = 'https://api-beta.demdex.com/oauth/token';
 
-    const CACHE_NAMESPACE  = 'adnx_auth_token';
+    const CACHE_NAMESPACE = 'adnx_auth_token';
     const TOKEN_EXPIRATION = 110;
 
     /** @var Cache */
@@ -26,7 +26,7 @@ class SandboxStrategy implements AuthStrategyInterface
      * AdnxStrategy constructor.
      *
      * @param ClientInterface $clientInterface
-     * @param Cache|null      $cache
+     * @param Cache|null $cache
      */
     public function __construct(ClientInterface $clientInterface, Cache $cache)
     {
@@ -47,7 +47,7 @@ class SandboxStrategy implements AuthStrategyInterface
     public function authenticate($clientId, $secretKey, $username, $password, $cache = true, $refresh = false)
     {
 
-        $cacheKey = self::CACHE_NAMESPACE.sha1($username.$password.self::BASE_URL);
+        $cacheKey = self::CACHE_NAMESPACE . sha1($username . $password . self::BASE_URL);
 
         if ($cache) {
             if ($this->cache->contains($cacheKey)) {
@@ -63,20 +63,20 @@ class SandboxStrategy implements AuthStrategyInterface
             )
         );
 
-        $payload = [
-            'auth' => [
-                'grant_type' => $refresh ? 'refresh_token' : 'password',
-                'username' => $username,
-                'password' => $password,
-            ]
-        ];
-
         $response = $this->client->request(
             'POST',
             self::BASE_URL,
             [
-                'Authorization' => ['Basic '.$headerAuth],
-                'body' => json_encode($payload)
+                'headers' =>
+                    [
+                        'Authorization' => 'Basic ' . $headerAuth
+                    ],
+                'form_params' =>
+                    [
+                        'grant_type' => $refresh ? 'refresh_token' : 'password',
+                        'username' => $username,
+                        'password' => $password,
+                    ]
             ]
         );
 
@@ -85,11 +85,12 @@ class SandboxStrategy implements AuthStrategyInterface
 
         $contentArray = json_decode($content, true);
 
-        if (!isset($contentArray["response"]["access_token"])) {
-            throw new AuthException($content);
+        if (!isset($contentArray["access_token"])) {
+            dump($contentArray["response"]["access_token"]);
+//            throw AuthException::authFailed($content);
         }
 
-        $token = $contentArray["response"]["access_token"];
+        $token = $contentArray["access_token"];
 
         if ($cache) {
             $this->cache->save($cacheKey, $token, self::TOKEN_EXPIRATION);
