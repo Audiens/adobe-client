@@ -168,9 +168,7 @@ class TraitRepository implements CacheableInterface
      */
     public function getTrendByTrait($sid, \DateTime $startDate, \DateTime $endDate, $dayInterval = '1D')
     {
-        $date = date('Y_m_d_H');
-
-        $cacheKey = self::CACHE_NAMESPACE . sha1($date);
+        $cacheKey = self::CACHE_NAMESPACE . sha1($startDate->getTimestamp().$endDate->getTimestamp());
 
         if ($this->isCacheEnabled()) {
             if ($this->cache->contains($cacheKey)) {
@@ -180,8 +178,8 @@ class TraitRepository implements CacheableInterface
 
         $bodyPost =
             [
-                'startDate' => $startDate->getTimestamp(),
-                'endDate' => $endDate->getTimestamp(),
+                'startDate' => $startDate->getTimestamp() * 1000,
+                'endDate' => $endDate->getTimestamp() * 1000,
                 'interval' => $dayInterval,
                 'sids' => [$sid],
                 'usePartnerLevelOverlap' => false
@@ -199,7 +197,6 @@ class TraitRepository implements CacheableInterface
             ]
         );
 
-
         $repositoryResponse = RepositoryResponse::fromResponse($response);
 
         if (!$repositoryResponse->isSuccessful()) {
@@ -210,23 +207,29 @@ class TraitRepository implements CacheableInterface
         $responseContent = json_decode($stream->getContents(), true);
         $stream->rewind();
 
+
         $result = [];
 
         foreach ($responseContent as $traitArray) {
             if (!empty($traitArray['metrics']) && count($traitArray['metrics']) > 0) {
                 $traitObj = Traits::fromArray($traitArray);
 
+                $traitObj->setMetrics([]);
+
                 foreach ($traitArray['metrics'] as $timestamp => $metric) {
                     $traitMetric = new TraitMetrics();
 
-                    $traitMetric->setTimestamp($timestamp);
+                    $time = $timestamp / 1000;
+                    $dateObj = new \DateTime();
+                    $dateObj->setTimestamp($time);
+                    $traitMetric->setTimestamp($dateObj);
                     $traitMetric->setCount($metric['count']);
                     $traitMetric->setUniques($metric['uniques']);
 
                     $traitObj->addMetrics($traitMetric);
                 }
 
-                $result[] = Traits::fromArray($traitArray);
+                $result[] = $traitObj;
             }
         }
 

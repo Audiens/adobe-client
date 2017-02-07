@@ -117,6 +117,7 @@ class RepositoryResponse
     private static function getResponseContent(Response $response)
     {
         $responseContent = $response->getBody()->getContents();
+
         $response->getBody()->rewind();
 
         return $responseContent;

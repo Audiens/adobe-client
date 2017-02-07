@@ -3,6 +3,7 @@
 namespace Test;
 
 use Audiens\AdobeClient\Auth;
+use Audiens\AdobeClient\Authentication\AdnxStrategy;
 use Audiens\AdobeClient\Authentication\SandboxStrategy;
 use Audiens\AdobeClient\Repository\TraitRepository;
 use Doctrine\Common\Cache\FilesystemCache;
@@ -86,8 +87,8 @@ class FunctionalTestCase extends \PHPUnit_Framework_TestCase
         $authClient = $this->getAuth($cacheToken);
 
         $traitRepository = new TraitRepository($authClient);
-        $traitRepository->setBaseUrl(TraitRepository::BASE_URL);
-        $traitRepository->setTrendUrl(TraitRepository::TRAITS_TREND_URL);
+        $traitRepository->setBaseUrl(TraitRepository::SANDBOX_BASE_URL);
+        $traitRepository->setTrendUrl(TraitRepository::SANDBOX_TREND_URL);
 
         return $traitRepository;
     }

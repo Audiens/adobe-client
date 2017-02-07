@@ -2,7 +2,7 @@
 
 namespace Audiens\AdobeClient\Authentication;
 
-use Audiens\AdobeClient\Exceptions\AuthException;
+use Audiens\AdobeClient\Exception\AuthException;
 use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\ClientInterface;
 
@@ -16,7 +16,7 @@ class AdnxStrategy implements AuthStrategyInterface
 
     const BASE_URL = 'https://api.demdex.com/oauth/token';
 
-    const CACHE_NAMESPACE  = 'adnx_auth_token';
+    const CACHE_NAMESPACE = 'adnx_auth_token';
     const TOKEN_EXPIRATION = 110;
 
     /** @var Cache */
@@ -26,7 +26,7 @@ class AdnxStrategy implements AuthStrategyInterface
      * AdnxStrategy constructor.
      *
      * @param ClientInterface $clientInterface
-     * @param Cache|null      $cache
+     * @param Cache|null $cache
      */
     public function __construct(ClientInterface $clientInterface, Cache $cache)
     {
@@ -44,8 +44,7 @@ class AdnxStrategy implements AuthStrategyInterface
      */
     public function authenticate($clientId, $secretKey, $username, $password, $cache = true, $refresh = false)
     {
-
-        $cacheKey = self::CACHE_NAMESPACE.sha1($username.$password.self::BASE_URL);
+        $cacheKey = self::CACHE_NAMESPACE . sha1($username . $password . self::BASE_URL);
 
         if ($cache) {
             if ($this->cache->contains($cacheKey)) {
@@ -78,16 +77,17 @@ class AdnxStrategy implements AuthStrategyInterface
             ]
         );
 
+
         $content = $response->getBody()->getContents();
         $response->getBody()->rewind();
 
         $contentArray = json_decode($content, true);
 
-        if (!isset($contentArray["response"]["access_token"])) {
-            throw new AuthException($content);
+        if (!isset($contentArray["access_token"])) {
+            throw new \Exception(AuthException::authFailed('No field access token available in json response'));
         }
 
-        $token = $contentArray["response"]["access_token"];
+        $token = $contentArray["access_token"];
 
         if ($cache) {
             $this->cache->save($cacheKey, $token, self::TOKEN_EXPIRATION);

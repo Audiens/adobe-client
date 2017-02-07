@@ -5,7 +5,10 @@ namespace Test\unit;
 use Audiens\AdobeClient\Auth;
 use Audiens\AdobeClient\Authentication\AuthStrategyInterface;
 use Test\TestCase;
-
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Stream;
+use Prophecy\Argument;
 
 /**
  * Class AuthTest
@@ -29,16 +32,18 @@ class AuthTest extends TestCase
 
         $dummyResponse = $this->prophesize(Response::class);
         $dummyResponse->getBody()->willReturn($dummyStream->reveal());
+        $dummyResponse->getStatusCode()->willReturn(200);
 
         $authStrategy = $this->prophesize(AuthStrategyInterface::class);
 
-        $authStrategy->authenticate($client_id, $secret_key,$username, $password, Argument::any())->willReturn($token)->shouldBeCalled();
+        $authStrategy->authenticate($client_id, $secret_key, $username, $password, Argument::any())->willReturn($token)->shouldBeCalled();
 
-        $expectedRequestOptions = [
-            'headers' => [
-                'Authorization' => $token,
-            ],
-        ];
+        $expectedRequestOptions =
+            [
+                    'headers' => [
+                        'Authorization' => ['Bearer ' . $token],
+                    ]
+            ];
 
         $client = $this->prophesize(ClientInterface::class);
         $client->request('POST', 'random_url', $expectedRequestOptions)->willReturn($dummyResponse->reveal())->shouldBeCalled();
@@ -59,9 +64,7 @@ class AuthTest extends TestCase
 
         $responseBody = json_encode(
             [
-                'response' => [
-                    'access_token' => $token,
-                ],
+                'access_token' => $token,
             ]
         );
 

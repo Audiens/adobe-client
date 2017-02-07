@@ -1,6 +1,6 @@
 <?php
 
-namespace Audiens\AdobeClient\Exceptions;
+namespace Audiens\AdobeClient\Exception;
 
 /**
  * Class AuthException

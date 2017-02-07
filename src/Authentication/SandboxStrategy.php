@@ -2,7 +2,8 @@
 
 namespace Audiens\AdobeClient\Authentication;
 
-use Audiens\AdobeClient\Exceptions\AuthException;
+use Audiens\AdobeClient\Auth;
+use Audiens\AdobeClient\Exception\AuthException;
 use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\ClientInterface;
 
@@ -86,7 +87,7 @@ class SandboxStrategy implements AuthStrategyInterface
         $contentArray = json_decode($content, true);
 
         if (!isset($contentArray["access_token"])) {
-            throw AuthException::authFailed($content);
+            throw new \Exception(AuthException::authFailed('No field access token available in json response'));
         }
 
         $token = $contentArray["access_token"];

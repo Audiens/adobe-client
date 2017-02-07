@@ -2,7 +2,7 @@
 
 namespace Test\unit;
 
-use Audiens\AdobeClient\Authentication\AdnxStrategy;
+use Audiens\AdobeClient\Authentication\SandboxStrategy;
 use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
@@ -11,15 +11,15 @@ use Prophecy\Argument;
 use Test\TestCase;
 
 /**
- * Class AuthTest
+ * Class SandboxStrategyTest
  */
-class AdnxStrategyTest extends TestCase
+class SandboxStrategyTest extends TestCase
 {
 
     /**
      * @test
      */
-    public function should_make_a_post_to_the_auth_endpoint()
+    public function should_make_a_post_to_the_sandbox_auth_endpoint()
     {
 
         $client_id = 'sample_client_id';
@@ -30,7 +30,7 @@ class AdnxStrategyTest extends TestCase
 
         $fakeResponseContent = [
             "access_token" => $token,
-
+            
         ];
 
         $headerAuth = base64_encode(
@@ -57,7 +57,7 @@ class AdnxStrategyTest extends TestCase
         $client = $this->prophesize(ClientInterface::class);
 
         $client
-            ->request('POST', AdnxStrategy::BASE_URL, [
+            ->request('POST', SandboxStrategy::BASE_URL, [
                     'headers' =>
                         [
                             'Authorization' => 'Basic ' . $headerAuth
@@ -72,7 +72,7 @@ class AdnxStrategyTest extends TestCase
             )
             ->willReturn($dummyResponse->reveal());
 
-        $auth = new AdnxStrategy($client->reveal(), $cache->reveal());
+        $auth = new SandboxStrategy($client->reveal(), $cache->reveal());
         $auth->authenticate($client_id, $secret_key, $username, $password, true);
 
 

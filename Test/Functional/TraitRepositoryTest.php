@@ -2,6 +2,7 @@
 
 namespace Test\Functional;
 
+use Audiens\AdobeClient\Entity\TraitMetrics;
 use Audiens\AdobeClient\Entity\Traits;
 use Prophecy\Argument;
 use Test\FunctionalTestCase;
@@ -20,55 +21,57 @@ class TraitRepositoryTest extends FunctionalTestCase
 
         $traits = $repository->findAll();
 
-        dump($traits);
-        die;
         $this->assertGreaterThan(0, $traits);
 
         foreach ($traits as $trait) {
             $this->assertInstanceOf(Traits::class, $trait);
         }
     }
-//
-//    /**
-//     * @test
-//     */
-//    public function findOneByWillReturn_a_trait()
-//    {
-//        $id = 4976311;
-//
-//        $repository = $this->getTraitRepository();
-//
-//        $traits = $repository->findOneById($id);
-//
-//        $this->assertNotEmpty($traits);
-//
-//        $this->assertEquals($id, $traits->getSid());
-//    }
 
-//    /**
-//     * @test
-//     */
-//    public function getTrendByTrait()
-//    {
-//        $sid = 5584551;
-//
-//        $repository = $this->getTraitRepository();
-//
-//        $startDate = new \DateTime('-1 month');
-//        $endDate = new \DateTime('now');
-//
-//        /** @var Traits[] $traits */
-//        $traits = $repository->getTrendByTrait($sid, $startDate, $endDate, '1D');
-//
-//        dump($traits);
-//        $this->assertGreaterThan(0, $traits);
-//
-//        /** @var Traits $trait */
-//        foreach ($traits as $trait) {
-//            dump($trait);
-////            $this->assertInstanceOf(Traits::class, $trait);
-////
-////            $this->assertNotEmpty($trait->getMetrics());
-//        }
-//    }
+    /**
+     * @test
+     */
+    public function findOneByWillReturn_a_trait()
+    {
+        $id = 4976311;
+
+        $repository = $this->getTraitRepository();
+
+        $traits = $repository->findOneById($id);
+
+        $this->assertNotEmpty($traits);
+
+        $this->assertEquals($id, $traits->getSid());
+    }
+
+    /**
+     * @test
+     */
+    public function getTrendByTrait()
+    {
+        $sid = 5584477;
+
+        $repository = $this->getTraitRepository();
+
+        $startDate = new \DateTime('-4 month');
+        $endDate = new \DateTime('-2 days');
+
+        /** @var Traits[] $traits */
+        $traits = $repository->getTrendByTrait($sid, $startDate, $endDate, '1D');
+
+        $this->assertEquals(1, count($traits));
+
+        /** @var Traits $trait */
+        foreach ($traits as $trait) {
+
+            $this->assertInstanceOf(Traits::class, $trait);
+
+            $this->assertNotEmpty($trait->getMetrics());
+
+            foreach($trait->getMetrics() as $metric)
+            {
+                $this->assertInstanceOf(TraitMetrics::class, $metric);
+            }
+        }
+    }
 }

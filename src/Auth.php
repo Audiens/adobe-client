@@ -97,7 +97,7 @@ class Auth implements ClientInterface
             ],
         ];
 
-        $options = array_merge($options, $optionForToken);
+        $options = array_merge_recursive($options, $optionForToken);
 
         return $this->client->request($method, $uri, $options);
     }
@@ -143,7 +143,6 @@ class Auth implements ClientInterface
      */
     protected function needToRevalidate(Response $response)
     {
-
         if ($response->getStatusCode() == 401) {
             $headers = $response->getHeaders();
 
