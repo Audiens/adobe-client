@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a41e06f-92b3-4fef-a8b4-9d91bd98a409" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test/Unit/SandboxStrategyTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/Functional/TraitRepositoryTest.php" afterPath="$PROJECT_DIR$/Test/Functional/TraitRepositoryTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/FunctionalTestCase.php" afterPath="$PROJECT_DIR$/Test/FunctionalTestCase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/Unit/AdnxStrategyTest.php" afterPath="$PROJECT_DIR$/Test/Unit/AdnxStrategyTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/Unit/AuthTest.php" afterPath="$PROJECT_DIR$/Test/Unit/AuthTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Auth.php" afterPath="$PROJECT_DIR$/src/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Authentication/AdnxStrategy.php" afterPath="$PROJECT_DIR$/src/Authentication/AdnxStrategy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Authentication/SandboxStrategy.php" afterPath="$PROJECT_DIR$/src/Authentication/SandboxStrategy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Exception/AuthException.php" afterPath="$PROJECT_DIR$/src/Exception/AuthException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/RepositoryResponse.php" afterPath="$PROJECT_DIR$/src/Repository/RepositoryResponse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TraitRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TraitRepository.php" />
     </list>
     <ignored path="adobe-client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,8 +57,8 @@
       <file leaf-file-name="AuthException.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exception/AuthException.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            <state relative-caret-position="54">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -105,11 +94,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,18 +121,6 @@
               <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
               <folding>
                 <element signature="e#29#84#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/Unit/AuthTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-              <folding>
-                <element signature="e#29#58#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -311,8 +298,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Test/Unit" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Test/Unit" />
       <recent name="$PROJECT_DIR$/src/Exception" />
       <recent name="$PROJECT_DIR$/src/Entity" />
       <recent name="$PROJECT_DIR$/src" />
@@ -404,13 +391,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81036000" />
+    <option name="totallyTimeSpent" value="81742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1003" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38207045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38207045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20437567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -468,20 +455,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entity/Traits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="140" column="27" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/TraitRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
           <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
           <folding>
-            <element signature="e#50#79#0#PHP" expanded="true" />
+            <element signature="e#50#79#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -769,7 +748,7 @@
         <state relative-caret-position="36">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="15" />
           <folding>
-            <element signature="e#50#79#0#PHP" expanded="true" />
+            <element signature="e#50#79#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -779,7 +758,7 @@
         <state relative-caret-position="450">
           <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
           <folding>
-            <element signature="e#29#58#0#PHP" expanded="true" />
+            <element signature="e#29#58#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -820,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Exception/AuthException.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        <state relative-caret-position="54">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -868,6 +847,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
