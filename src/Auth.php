@@ -83,7 +83,7 @@ class Auth implements ClientInterface
         ];
 
 
-        $options = array_merge($options, $optionForToken);
+        $options = array_merge_recursive($options, $optionForToken);
 
         $response = $this->client->request($method, $uri, $options);
 

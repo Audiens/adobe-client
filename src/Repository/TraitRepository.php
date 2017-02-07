@@ -5,6 +5,7 @@ namespace Audiens\AdobeClient\Repository;
 use Audiens\AdobeClient\Auth;
 use Audiens\AdobeClient\CachableTrait;
 use Audiens\AdobeClient\CacheableInterface;
+use Audiens\AdobeClient\Entity\TraitMetrics;
 use Audiens\AdobeClient\Entity\Traits;
 use Audiens\AdobeClient\Exceptions\RepositoryException;
 use Doctrine\Common\Cache\Cache;
@@ -22,6 +23,10 @@ class TraitRepository implements CacheableInterface
 
     const SANDBOX_BASE_URL = 'https://api-beta.demdex.com:443/v1/traits/';
 
+    const TRAITS_TREND_URL = 'https://bank.demdex.com/portal/api/v1/reports/traits-trend';
+
+    const SANDBOX_TREND_URL = 'https://bank-beta.demdex.com/portal/api/v1/reports/traits-trend';
+
     /** @var Client */
     protected $client;
 
@@ -31,6 +36,9 @@ class TraitRepository implements CacheableInterface
     /** @var  string */
     protected $baseUrl;
 
+    /** @var  string */
+    protected $trendUrl;
+
     const CACHE_NAMESPACE = 'adobe_trait_repository_find_all';
 
     const CACHE_EXPIRATION = 3600;
@@ -39,7 +47,7 @@ class TraitRepository implements CacheableInterface
      * TraitRepository constructor.
      *
      * @param ClientInterface $client
-     * @param Cache|null      $cache
+     * @param Cache|null $cache
      */
     public function __construct(ClientInterface $client, Cache $cache = null)
     {
@@ -47,6 +55,7 @@ class TraitRepository implements CacheableInterface
         $this->cache = $cache;
         $this->cacheEnabled = $cache instanceof Cache;
         $this->baseUrl = self::BASE_URL;
+        $this->trendUrl = self::TRAITS_TREND_URL;
     }
 
     /**
@@ -66,36 +75,22 @@ class TraitRepository implements CacheableInterface
     }
 
     /**
-     * @param Traits $trait
-     *
-     * @return RepositoryResponse
-     * @throws RepositoryException
+     * @return string
      */
-    public function add(Traits $trait)
+    public function getTrendUrl()
     {
-
-        $payload = [
-            $trait->toArray(),
-        ];
-
-
-        $response = $this->client->request('POST', $this->baseUrl, ['body' => json_encode($payload)]);
-
-        $repositoryResponse = RepositoryResponse::fromResponse($response);
-
-        if ($repositoryResponse->isSuccessful()) {
-            $stream = $response->getBody();
-            $responseContent = json_decode($stream->getContents(), true);
-            $stream->rewind();
-
-            if (!(isset($responseContent['sid']))) {
-                throw RepositoryException::wrongFormat(serialize($responseContent));
-            }
-
-            $trait->setSid($responseContent['sid']);
-        }
-        return $repositoryResponse;
+        return $this->trendUrl;
     }
+
+    /**
+     * @param string $trendUrl
+     */
+    public function setTrendUrl($trendUrl)
+    {
+        $this->trendUrl = $trendUrl;
+    }
+
+
 
     /**
      * @param $id
@@ -105,7 +100,7 @@ class TraitRepository implements CacheableInterface
     public function findOneById($id)
     {
 
-        $compiledUrl = $this->baseUrl.$id;
+        $compiledUrl = $this->baseUrl . $id;
 
         $response = $this->client->request('GET', $compiledUrl);
 
@@ -124,15 +119,17 @@ class TraitRepository implements CacheableInterface
 
     public function findAll()
     {
-//        $cacheKey = self::CACHE_NAMESPACE.sha1($memberId.$start.$maxResults);
-//
-//        if ($this->isCacheEnabled()) {
-//            if ($this->cache->contains($cacheKey)) {
-//                return $this->cache->fetch($cacheKey);
-//            }
-//        }
+        $date = date('Y_m_d_H');
 
-        $compiledUrl = $this->baseUrl."?includeMetrics=true";
+        $cacheKey = self::CACHE_NAMESPACE . sha1($date);
+
+        if ($this->isCacheEnabled()) {
+            if ($this->cache->contains($cacheKey)) {
+                return $this->cache->fetch($cacheKey);
+            }
+        }
+
+        $compiledUrl = $this->baseUrl . "?includeMetrics=true";
 
         $response = $this->client->request('GET', $compiledUrl);
 
@@ -153,10 +150,89 @@ class TraitRepository implements CacheableInterface
         foreach ($responseContent as $traitArray) {
             $result[] = Traits::fromArray($traitArray);
         }
-//
-//        if ($this->isCacheEnabled()) {
-//            $this->cache->save($cacheKey, $result, self::CACHE_EXPIRATION);
-//        }
+
+        if ($this->isCacheEnabled()) {
+            $this->cache->save($cacheKey, $result, self::CACHE_EXPIRATION);
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param $sid
+     * @param \DateTime $startDate
+     * @param \DateTime $endDate
+     * @param string $dayInterval
+     * @return array
+     * @throws RepositoryException
+     */
+    public function getTrendByTrait($sid, \DateTime $startDate, \DateTime $endDate, $dayInterval = '1D')
+    {
+        $date = date('Y_m_d_H');
+
+        $cacheKey = self::CACHE_NAMESPACE . sha1($date);
+
+        if ($this->isCacheEnabled()) {
+            if ($this->cache->contains($cacheKey)) {
+                return $this->cache->fetch($cacheKey);
+            }
+        }
+
+        $bodyPost =
+            [
+                'startDate' => $startDate->getTimestamp(),
+                'endDate' => $endDate->getTimestamp(),
+                'interval' => $dayInterval,
+                'sids' => [$sid],
+                'usePartnerLevelOverlap' => false
+            ];
+
+        $response = $this->client->request(
+            'POST',
+            $this->trendUrl,
+            [
+                'headers' =>
+                    [
+                        'Content-Type' => 'application/json',
+                    ],
+                'body' => \json_encode($bodyPost)
+            ]
+        );
+
+
+        $repositoryResponse = RepositoryResponse::fromResponse($response);
+
+        if (!$repositoryResponse->isSuccessful()) {
+            throw RepositoryException::genericFailed($repositoryResponse);
+        }
+
+        $stream = $response->getBody();
+        $responseContent = json_decode($stream->getContents(), true);
+        $stream->rewind();
+
+        $result = [];
+
+        foreach ($responseContent as $traitArray) {
+            if (!empty($traitArray['metrics']) && count($traitArray['metrics']) > 0) {
+                $traitObj = Traits::fromArray($traitArray);
+
+                foreach ($traitArray['metrics'] as $timestamp => $metric) {
+                    $traitMetric = new TraitMetrics();
+
+                    $traitMetric->setTimestamp($timestamp);
+                    $traitMetric->setCount($metric['count']);
+                    $traitMetric->setUniques($metric['uniques']);
+
+                    $traitObj->addMetrics($traitMetric);
+                }
+
+                $result[] = Traits::fromArray($traitArray);
+            }
+        }
+
+        if ($this->isCacheEnabled()) {
+            $this->cache->save($cacheKey, $result, self::CACHE_EXPIRATION);
+        }
 
         return $result;
     }

@@ -86,8 +86,7 @@ class SandboxStrategy implements AuthStrategyInterface
         $contentArray = json_decode($content, true);
 
         if (!isset($contentArray["access_token"])) {
-            dump($contentArray["response"]["access_token"]);
-//            throw AuthException::authFailed($content);
+            throw AuthException::authFailed($content);
         }
 
         $token = $contentArray["access_token"];

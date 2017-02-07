@@ -11,8 +11,6 @@ use Test\FunctionalTestCase;
  */
 class TraitRepositoryTest extends FunctionalTestCase
 {
-
-
     /**
      * @test
      */
@@ -22,55 +20,55 @@ class TraitRepositoryTest extends FunctionalTestCase
 
         $traits = $repository->findAll();
 
+        dump($traits);
+        die;
         $this->assertGreaterThan(0, $traits);
 
         foreach ($traits as $trait) {
             $this->assertInstanceOf(Traits::class, $trait);
         }
-
-
     }
+//
+//    /**
+//     * @test
+//     */
+//    public function findOneByWillReturn_a_trait()
+//    {
+//        $id = 4976311;
+//
+//        $repository = $this->getTraitRepository();
+//
+//        $traits = $repository->findOneById($id);
+//
+//        $this->assertNotEmpty($traits);
+//
+//        $this->assertEquals($id, $traits->getSid());
+//    }
 
-    /**
-     * @test
-     *
-     */
-    public function add_will_create_trait()
-    {
-        $trait = new Traits();
-
-        $trait->setName('test');
-        $trait->setDescription('test');
-        $trait->setIntegrationCode("company-activity");
-        $trait->setTraitType("COMPANY_ACTIVITY_TRAIT");
-        $trait->setStatus("ACTIVE");
-        $trait->setDataSourceId(113425);
-        $trait->setFolderId(105946);
-
-        $repository = $this->getTraitRepository();
-
-
-        $repositoryResponse = $repository->add($trait);
-
-        $this->assertTrue($repositoryResponse->isSuccessful(), $repositoryResponse->getError()->getError());
-        $this->assertNotNull($trait->getSid());
-    }
-
-    /**
-     * @test
-     */
-    public function findOneByWillReturn_a_trait()
-    {
-        $id = 4976311;
-
-        $repository = $this->getTraitRepository();
-
-        $traits = $repository->findOneById($id);
-
-        $this->assertNotEmpty($traits);
-
-        $this->assertEquals($id, $traits->getSid());
-
-
-    }
+//    /**
+//     * @test
+//     */
+//    public function getTrendByTrait()
+//    {
+//        $sid = 5584551;
+//
+//        $repository = $this->getTraitRepository();
+//
+//        $startDate = new \DateTime('-1 month');
+//        $endDate = new \DateTime('now');
+//
+//        /** @var Traits[] $traits */
+//        $traits = $repository->getTrendByTrait($sid, $startDate, $endDate, '1D');
+//
+//        dump($traits);
+//        $this->assertGreaterThan(0, $traits);
+//
+//        /** @var Traits $trait */
+//        foreach ($traits as $trait) {
+//            dump($trait);
+////            $this->assertInstanceOf(Traits::class, $trait);
+////
+////            $this->assertNotEmpty($trait->getMetrics());
+//        }
+//    }
 }

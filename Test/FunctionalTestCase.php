@@ -86,7 +86,8 @@ class FunctionalTestCase extends \PHPUnit_Framework_TestCase
         $authClient = $this->getAuth($cacheToken);
 
         $traitRepository = new TraitRepository($authClient);
-        $traitRepository->setBaseUrl(TraitRepository::SANDBOX_BASE_URL);
+        $traitRepository->setBaseUrl(TraitRepository::BASE_URL);
+        $traitRepository->setTrendUrl(TraitRepository::TRAITS_TREND_URL);
 
         return $traitRepository;
     }

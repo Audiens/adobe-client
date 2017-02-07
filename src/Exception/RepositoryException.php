@@ -2,6 +2,8 @@
 
 namespace Audiens\AdobeClient\Exceptions;
 
+use Audiens\AdobeClient\Entity\Traits;
+
 /**
  * Class RepositoryException
  */
@@ -25,5 +27,16 @@ class RepositoryException extends \Exception
     public static function wrongFormat($responseContent)
     {
         return new self($responseContent);
+    }
+
+
+    /**
+     * @param Traits $trait
+     *
+     * @return self
+     */
+    public static function missingSid($trait)
+    {
+        return new self('Missing sid for '.serialize($trait->getName()));
     }
 }

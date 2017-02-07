@@ -33,10 +33,10 @@ class Traits
     protected $status;
 
     /** @var  int */
-    protected $crUid;
+    protected $crUID;
 
     /** @var  int */
-    protected $upUid;
+    protected $upUID;
 
     /** @var  string */
     protected $integrationCode;
@@ -94,6 +94,10 @@ class Traits
 
     /** @var  \DateTime */
     protected $updateTime;
+
+    /** @var  array() */
+    protected $metrics = [];
+
 
     /**
      * @return int
@@ -196,15 +200,15 @@ class Traits
      */
     public function getCrUid()
     {
-        return $this->crUid;
+        return $this->crUID;
     }
 
     /**
-     * @param int $crUid
+     * @param int $crUID
      */
-    public function setCrUid($crUid)
+    public function setCrUid($crUID)
     {
-        $this->crUid = $crUid;
+        $this->crUID = $crUID;
     }
 
     /**
@@ -212,15 +216,15 @@ class Traits
      */
     public function getUpUid()
     {
-        return $this->upUid;
+        return $this->upUID;
     }
 
     /**
-     * @param int $upUid
+     * @param int $upUID
      */
-    public function setUpUid($upUid)
+    public function setUpUid($upUID)
     {
-        $this->upUid = $upUid;
+        $this->upUID = $upUID;
     }
 
     /**
@@ -525,5 +529,47 @@ class Traits
     public function setUpdateTime(\DateTime $updateTime)
     {
         $this->updateTime = $updateTime;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMetrics()
+    {
+        return $this->metrics;
+    }
+
+    /**
+     * @param array $metrics
+     */
+    public function setMetrics(array $metrics)
+    {
+        $this->metrics = $metrics;
+    }
+
+    public function addMetrics($metric)
+    {
+        $this->metrics[] = $metric;
+    }
+
+    public function toInsertArray()
+    {
+        $retunArray = [
+            'pid' => $this->getPid(),
+            'name' => $this->getName(),
+            'description' => $this->getDescription(),
+            'integrationCode' => $this->getIntegrationCode(),
+            'traitType' => $this->getTraitType(),
+            'status' => $this->getStatus(),
+            'dataSourceId' => $this->getDataSourceId(),
+            'folderId' => $this->getFolderId(),
+            'crUID' => $this->getCrUid(),
+            'upUID' => $this->getUpUid(),
+            'createTime' => $this->getCreateTime(),
+            'updateTime' => $this->getUpdateTime()
+
+        ];
+
+        return $retunArray;
     }
 }
