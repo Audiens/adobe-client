@@ -33,7 +33,7 @@ class TraitRepositoryTest extends FunctionalTestCase
      */
     public function findOneByWillReturn_a_trait()
     {
-        $id = 4976311;
+        $id = 0000; // put a valid trait sid here
 
         $repository = $this->getTraitRepository();
 
