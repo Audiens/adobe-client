@@ -33,6 +33,8 @@ class TraitRepositoryTest extends FunctionalTestCase
      */
     public function findOneByWillReturn_a_trait()
     {
+        $this->markTestSkipped('Missing trait id');
+
         $id = 0000; // put a valid trait sid here
 
         $repository = $this->getTraitRepository();
@@ -49,7 +51,9 @@ class TraitRepositoryTest extends FunctionalTestCase
      */
     public function getTrendByTrait()
     {
-        $sid = 5584477;
+        $this->markTestSkipped('Missing trait id');
+
+        $sid = 0000; //put a valid trait here
 
         $repository = $this->getTraitRepository();
 

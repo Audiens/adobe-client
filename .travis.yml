@@ -12,7 +12,7 @@ before_script:
   - composer install --prefer-dist
 
 script:
-  - bin/phpunit Test/Unit -v $PHPUNIT_FLAGS
+  - bin/phpunit --testsuite=unit -v $PHPUNIT_FLAGS
 
 after_success:
   - if [[ $TRAVIS_PHP_VERSION = '5.6' ]]; then php bin/coveralls -v; fi
