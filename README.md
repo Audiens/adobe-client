@@ -1,5 +1,7 @@
 # Audiens/adobe-client
 [![Build Status](https://travis-ci.org/Audiens/adobe-client.svg?branch=master)](https://travis-ci.org/Audiens/adobe-client)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Audiens/adobe-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Audiens/adobe-client/?branch=master)
+[![Code Climate](https://codeclimate.com/github/Audiens/adobe-client/badges/gpa.svg)](https://codeclimate.com/github/Audiens/adobe-client)
 
 An OOP implementation af the Adobe API.
   
