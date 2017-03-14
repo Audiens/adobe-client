@@ -100,7 +100,7 @@ class TraitRepository implements CacheableInterface
     public function findOneById($id)
     {
 
-        $compiledUrl = $this->baseUrl . $id;
+        $compiledUrl = $this->baseUrl . $id.'?includeMetrics=true';
 
         $response = $this->client->request('GET', $compiledUrl);
 
