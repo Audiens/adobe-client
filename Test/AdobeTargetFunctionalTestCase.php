@@ -2,25 +2,23 @@
 
 namespace Test;
 
-use Audiens\AdobeClient\Auth;
-use Audiens\AdobeClient\Authentication\AdnxStrategy;
-use Audiens\AdobeClient\Authentication\SandboxStrategy;
-use Audiens\AdobeClient\Repository\TraitRepository;
+use Audiens\AdobeClient\AuthAdobeTarget;
+use Audiens\AdobeClient\Authentication\JwtStrategy;
+use Audiens\AdobeClient\Repository\Target\AudienceRepository;
 use Doctrine\Common\Cache\FilesystemCache;
 use Dotenv\Dotenv;
 use GuzzleHttp\Client;
 
 /**
- * Class FunctionalTestCase
+ * Class AdobeTargetFunctionalTestCase
  */
-class FunctionalTestCase extends \PHPUnit\Framework\TestCase
+class AdobeTargetFunctionalTestCase extends \PHPUnit\Framework\TestCase
 {
 
     const REQUIRED_ENV = [
         'CLIENT_ID',
-        'SECRET_KEY',
-        'USERNAME',
-        'PASSWORD',
+        'CLIENT_SECRET',
+        'JWT_TOKEN',
     ];
 
     protected function setUp()
@@ -61,17 +59,17 @@ class FunctionalTestCase extends \PHPUnit\Framework\TestCase
     /**
      * @param bool|true $cacheToken
      *
-     * @return Auth
+     * @return AuthAdobeTarget
      */
     protected function getAuth($cacheToken = true)
     {
         $cache = $cacheToken ? new FilesystemCache('build') : null;
         $client = new Client();
 
-        $authStrategy = new SandboxStrategy(new Client(), $cache);
+        $authStrategy = new JwtStrategy(new Client(), $cache);
 
 
-        $authClient = new Auth(getenv('CLIENT_ID'), getenv('SECRET_KEY'), getenv('USERNAME'), getenv('PASSWORD'), $client, $authStrategy);
+        $authClient = new AuthAdobeTarget(getenv('CLIENT_ID'), getenv('CLIENT_SECRET'), getenv('JWT_TOKEN'), $client, $authStrategy);
 
         return $authClient;
     }
@@ -79,18 +77,17 @@ class FunctionalTestCase extends \PHPUnit\Framework\TestCase
     /**
      * @param bool|true $cacheToken
      *
-     * @return TraitRepository
+     * @return AudienceRepository
      */
-    protected function getTraitRepository($cacheToken = true)
+    protected function getAudienceRepository($cacheToken = true)
     {
 
         $authClient = $this->getAuth($cacheToken);
 
-        $traitRepository = new TraitRepository($authClient);
-        $traitRepository->setBaseUrl(TraitRepository::SANDBOX_BASE_URL);
-        $traitRepository->setTrendUrl(TraitRepository::SANDBOX_TREND_URL);
+        $audienceRepository = new AudienceRepository($authClient);
+        $audienceRepository->setBaseUrl(AudienceRepository::BASE_URL);
 
-        return $traitRepository;
+        return $audienceRepository;
     }
 
 }

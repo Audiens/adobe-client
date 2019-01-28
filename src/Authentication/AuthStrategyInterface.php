@@ -22,6 +22,15 @@ interface AuthStrategyInterface
     public function authenticate($clientId, $secretKey, $username, $password, $cache = true, $refresh = false);
 
     /**
+     * @param      $clientId
+     * @param      $clientSecret
+     * @param      $jwtToken
+     * @param bool $cache
+     * @return string bearer
+     */
+    public function authenticateJwtToken($clientId, $clientSecret, $jwtToken, $cache = true);
+
+    /**
      * @return string
      */
     public function getSlug();

@@ -193,7 +193,7 @@ class TraitRepository implements CacheableInterface
                     [
                         'Content-Type' => 'application/json',
                     ],
-                'body' => \json_encode($bodyPost)
+                    'body' => \json_encode($bodyPost)
             ]
         );
 

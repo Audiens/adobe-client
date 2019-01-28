@@ -2,29 +2,28 @@
 
 namespace Audiens\AdobeClient\Authentication;
 
-use Audiens\AdobeClient\Auth;
 use Audiens\AdobeClient\Exception\AuthException;
 use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\ClientInterface;
 
 /**
- * Class SandboxStrategy
+ * Class JwtStrategy
  */
-class SandboxStrategy implements AuthStrategyInterface
+class JwtStrategy implements AuthStrategyInterface
 {
 
-    const NAME = 'adnx_auth_strategy';
+    const NAME = 'jwt_auth_strategy';
 
-    const BASE_URL = 'https://api-beta.demdex.com/oauth/token';
+    const BASE_URL = 'https://ims-na1.adobelogin.com/ims/exchange/jwt/';
 
-    const CACHE_NAMESPACE = 'adnx_auth_token';
+    const CACHE_NAMESPACE = 'jwt_auth_token';
     const TOKEN_EXPIRATION = 110;
 
     /** @var Cache */
     protected $cache;
 
     /**
-     * AdnxStrategy constructor.
+     * JwtStrategy constructor.
      *
      * @param ClientInterface $clientInterface
      * @param Cache|null $cache
@@ -35,20 +34,14 @@ class SandboxStrategy implements AuthStrategyInterface
         $this->client = $clientInterface;
     }
 
-    /**
-     * @param string $clientId
-     * @param string $secretKey
-     * @param string $username
-     * @param $password
-     * @param bool $cache
-     * @param bool $refresh
-     * @return mixed
-     * @throws AuthException
-     */
     public function authenticate($clientId, $secretKey, $username, $password, $cache = true, $refresh = false)
     {
+        // TODO: Implement authenticate() method.
+    }
 
-        $cacheKey = self::CACHE_NAMESPACE . sha1($username . $password . self::BASE_URL);
+    public function authenticateJwtToken($clientId, $secretKey, $jwtToken, $cache = true)
+    {
+        $cacheKey = self::CACHE_NAMESPACE . sha1($clientId . $secretKey . $jwtToken . self::BASE_URL);
 
         if ($cache) {
             if ($this->cache->contains($cacheKey)) {
@@ -56,35 +49,24 @@ class SandboxStrategy implements AuthStrategyInterface
             }
         }
 
-        $headerAuth = base64_encode(
-            sprintf(
-                '%s:%s',
-                $clientId,
-                $secretKey
-            )
-        );
-
         $response = $this->client->request(
             'POST',
             self::BASE_URL,
             [
-                'headers' =>
+                'form_params' =>
                     [
-                        'Authorization' => 'Basic ' . $headerAuth
-                    ],
-                    'form_params' =>
-                    [
-                        'grant_type' => $refresh ? 'refresh_token' : 'password',
-                        'username' => $username,
-                        'password' => $password,
+                        'client_id' => $clientId,
+                        'client_secret' => $secretKey,
+                        'jwt_token' => $jwtToken,
                     ]
             ]
         );
 
+
         $content = $response->getBody()->getContents();
         $response->getBody()->rewind();
 
-        $contentArray = json_decode($content, true);
+        $contentArray = \json_decode($content, true);
 
         if (!isset($contentArray["access_token"])) {
             throw new \Exception(AuthException::authFailed('No field access token available in json response'));
@@ -105,10 +87,5 @@ class SandboxStrategy implements AuthStrategyInterface
     public function getSlug()
     {
         return self::NAME;
-    }
-
-    public function authenticateJwtToken($clientId, $clientSecret, $jwtToken, $cache = true)
-    {
-        // TODO: Implement authenticateJwtToken() method.
     }
 }

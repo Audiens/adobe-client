@@ -68,7 +68,7 @@ class AdnxStrategy implements AuthStrategyInterface
                     [
                         'Authorization' => 'Basic ' . $headerAuth
                     ],
-                'form_params' =>
+                    'form_params' =>
                     [
                         'grant_type' => $refresh ? 'refresh_token' : 'password',
                         'username' => $username,
@@ -102,5 +102,10 @@ class AdnxStrategy implements AuthStrategyInterface
     public function getSlug()
     {
         return self::NAME;
+    }
+
+    public function authenticateJwtToken($clientId, $clientSecret, $jwtToken, $cache = true)
+    {
+        // TODO: Implement authenticateJwtToken() method.
     }
 }
