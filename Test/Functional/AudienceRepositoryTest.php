@@ -138,6 +138,43 @@ class AudienceRepositoryTest extends AdobeTargetFunctionalTestCase
         $this->assertEquals($jsonFormatted, $actualJsonFormatted);
     }
 
+    /**
+     * @test
+     */
+    public function toArray_will_translate_the_audience_to_a_valid_json_with_only_a_single_equals_rules()
+    {
+        $data = [];
+
+        $data['profile'] = 'test77';
+        $data['equals'] = [1234];
+
+        $audience = new Audience();
+
+        $audience->setName('Homepage visitors from California');
+        $audience->setDescription('Description for my audience');
+        $audience->setTargetRuleConditions($data);
+
+        $json = \json_encode($audience->toArray());
+
+        $jsonAudience = '
+          {
+            "name":"Homepage visitors from California",
+            "description":"Description for my audience",
+            "targetRule":{
+                    "profile":"test77",
+                     "equals":[
+                        1234
+                    ]
+                }
+        }';
+
+        $jsonFormatted = trim(preg_replace('/\s\s+/', '', $jsonAudience));
+        $actualJsonFormatted = trim(preg_replace('/\s\s+/', '', $json));
+
+
+        $this->assertEquals($jsonFormatted, $actualJsonFormatted);
+    }
+
 
 
 

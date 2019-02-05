@@ -135,8 +135,14 @@ class Audience
             'description' => $this->getDescription(),
         ];
 
-        if (!empty($this->targetRuleLogicalCondition)) {
+        if (!empty($this->targetRuleLogicalCondition) && !empty($this->targetRuleConditions)) {
             $returnArray['targetRule'] = [$this->targetRuleLogicalCondition => $this->getTargetRuleConditions()];
+
+            return $returnArray;
+        }
+
+        if (empty($this->targetRuleLogicalCondition) && !empty($this->targetRuleConditions)) {
+            $returnArray['targetRule'] = (object)$this->getTargetRuleConditions();
         }
 
         return $returnArray;
