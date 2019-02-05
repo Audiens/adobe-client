@@ -76,11 +76,8 @@ class AudienceRepository implements CacheableInterface
             'POST',
             $compiledUrl,
             [
-                'headers' =>
-                    [
-                        'Content-Type' => 'application/vnd.adobe.target.v1+json',
-                    ],
-                    'body' => \json_encode($audience->toArray()),
+
+                'body' => \json_encode($audience->toArray()),
             ]
         );
 
@@ -111,11 +108,7 @@ class AudienceRepository implements CacheableInterface
             'PUT',
             $compiledUrl,
             [
-                'headers' =>
-                    [
-                        'Content-Type' => 'application/vnd.adobe.target.v1+json',
-                    ],
-                    'body' => \json_encode($audience->toArray()),
+                'body' => \json_encode($audience->toArray()),
             ]
         );
 

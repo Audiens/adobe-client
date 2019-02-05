@@ -25,6 +25,9 @@ class AuthAdobeTarget implements ClientInterface
     protected $token;
 
     /** @var string */
+    protected $xApiKey;
+
+    /** @var string */
 
     /** @var  string */
     protected $clientId;
@@ -46,12 +49,14 @@ class AuthAdobeTarget implements ClientInterface
         $clientId,
         $secretKey,
         $token,
+        $xApiKey,
         ClientInterface $clientInterface,
         AuthStrategyInterface $authStrategy
     ) {
         $this->clientId = $clientId;
         $this->secretKey = $secretKey;
         $this->token = $token;
+        $this->xApiKey = $xApiKey;
 
         $this->client = $clientInterface;
         $this->authStrategy = $authStrategy;
@@ -72,8 +77,9 @@ class AuthAdobeTarget implements ClientInterface
         $optionForToken = [
             'headers' => [
                 'Authorization' =>  ['Bearer '.$this->authStrategy->authenticateJwtToken($this->clientId, $this->secretKey, $this->token, true)],
-                'content-type' => 'application/vnd.adobe.target.v1+json',
-                'x-api-key' => $this->clientId
+                'Content-Type' => 'application/vnd.adobe.target.v1+json',
+                'x-api-key' => $this->xApiKey,
+                'Accept' => '*/*'
             ],
         ];
 
