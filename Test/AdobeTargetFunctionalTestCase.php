@@ -19,6 +19,7 @@ class AdobeTargetFunctionalTestCase extends \PHPUnit\Framework\TestCase
         'CLIENT_ID',
         'CLIENT_SECRET',
         'JWT_TOKEN',
+        'X_API_KEY',
     ];
 
     protected function setUp()
@@ -69,7 +70,7 @@ class AdobeTargetFunctionalTestCase extends \PHPUnit\Framework\TestCase
         $authStrategy = new JwtStrategy(new Client(), $cache);
 
 
-        $authClient = new AuthAdobeTarget(getenv('CLIENT_ID'), getenv('CLIENT_SECRET'), getenv('JWT_TOKEN'), $client, $authStrategy);
+        $authClient = new AuthAdobeTarget(getenv('CLIENT_ID'), getenv('CLIENT_SECRET'), getenv('JWT_TOKEN'), getenv('X_API_KEY'), $client, $authStrategy);
 
         return $authClient;
     }
